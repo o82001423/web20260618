@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 50px;
+        height: 50px;
+        background-color: aqua;
+        border: 1px solid black;
+        border-radius: 30px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        function moveloop() {
+            $(".box")
+                .animate({ left: '550px' }, 1000)
+                .animate({ top: '550px' }, 1000)
+                .animate({ left: '0px' }, 1000)
+                .animate({ top: '0px' }, 1000, function () {
+                    moveloop();
+                })
+        }
+        moveloop();
+    });
+</script>

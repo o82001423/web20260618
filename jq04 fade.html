@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>fade</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 80%;
+        height: 20vh;
+        /* background-color: rgb(175, 144, 204); */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+    }
+
+    .box {
+        width: 33.3%;
+        height: 50%;
+        background-color: rgb(19, 204, 204);
+        padding-top: 20px;
+        border-radius: 30px;
+        cursor: pointer;
+
+    }
+
+    .output-container {
+        background-color: aqua;
+        text-align: center;
+        width: 80%;
+        height: 40vh;
+        margin: auto;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box fadeInBtn">
+            fadeIn
+        </div>
+        <br>
+        <div class="box fadeOutBtn">
+            fadeOut
+        </div>
+        <div class="box fadetogglebtn">
+            toggle
+        </div>
+    </div>
+
+    <div class="output-container"></div>
+
+    <script>
+        $(document).ready(function () {
+            const fadeInBtn = $('.fadeInBtn');
+            const fadeOutBtn = $('.fadeOutBtn');
+            const fadetogglebtn = $('.fadetogglebtn');
+            const outputContainer = $('.output-container')
+
+            fadeInBtn.click(function (e) {
+                outputContainer.hide();
+            });
+
+            fadeOutBtn.click(function (e) {
+                outputContainer.show();
+            });
+
+            fadetogglebtn.click(function (e) {
+                outputContainer.toggle();
+            });
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>hide</title>
+</head>
+<style>
+    .box1{
+        width: 300px;
+        height: 300px;
+        background-color: aqua;
+        margin-top: auto;
+        border-radius: 30px;
+    }
+    .box2{
+        width: 300px;
+        height: 300px;
+        background-color: yellowgreen;
+        margin-top: auto;
+        border-radius: 30px;
+    }
+</style>
+
+<body>
+
+    <div class="box1 aqua">
+
+    </div>
+    <br>
+    <div class="box2 aqua">
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            const box1 = $('.box1');
+            const box2 = $('.box2');
+          
+            box1.click(function (e) {
+                setTimeout(() => {
+                    box1.hide();
+                },1000);
+
+                
+                setTimeout(() => {
+                    box1.show();
+                },2000);
+                
+            });
+        
+
+        box2.click(function (e) {
+                setTimeout(()=>{
+                    box2.hide();
+                },1000);
+
+                
+                setTimeout(()=>{
+                    box2.show();
+                },2000);
+                
+            });
+        });
+        
+    </script>
+</body>
+
+</html>
