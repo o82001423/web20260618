@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+</style>
+
+
+<body>
+
+    <table style="width: 100%;" id="myTable">
+        <tr>
+            <th width="30%">id</th>
+            <th width="30%">name</th>
+            <th width="">mobile</th>
+        </tr>
+    </table>
+
+    <!-- <?php foreach($data as $key=>$value):?>
+            <tr>
+                <td><?= $value['id'] ?></td>
+                <td><?= $value['name'] ?></td>
+                <td><?= $value['mobile'] ?></td>
+            </tr>
+        <?php endforeach; ?> -->
+    <script>
+        $(document).ready(function () {
+            const myTable = $("#myTable");
+            console.log('myTable', myTable);
+
+            let data = [
+                {
+                    id: '1',
+                    name: 'any',
+                    mobile: '0987'
+                },
+                {
+                    id: '2',
+                    name: 'yna',
+                    mobile: '0986'
+                },
+                {
+                    id: '3',
+                    name: 'aer',
+                    mobile: '0985'
+                },
+            ];
+            console.log('data', data);
+
+            let tmpText = '';
+            $.each(data, function (key,value) {
+                tmpText +=
+                    `<tr>
+                        <td> ${value['id'] }</td>
+                        <td> ${value['name'] }</td>
+                        <td> ${value['mobile']}</td>
+                    </tr>`;
+            });
+            console.log('tmpText',tmpText);
+            myTable.append(tmpText);
+
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>
